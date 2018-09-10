@@ -2,11 +2,11 @@ from tweepy import API
 from tweepy import Cursor
 from tweepy import OAuthHandler
 import wget
-import twitter_credentials
+import passwords
 
 
-    auth = OAuthHandler(twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
-    auth.set_access_token(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET)
+    auth = OAuthHandler(passwords.CONSUMER_KEY, passwords.CONSUMER_SECRET)
+    auth.set_access_token(passwords.ACCESS_TOKEN, passwords.ACCESS_TOKEN_SECRET)
     my_twitter = API(auth)
 
     tweets = []
