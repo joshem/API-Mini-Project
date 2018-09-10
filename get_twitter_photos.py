@@ -20,7 +20,11 @@ import twitter_credentials
 		if(len(media)>0):
 			images.append(media[0]['media_url'])
 	print(images)
-	for image in images:
-		wget.download(image, '/home/joshuastern/Documents/601/TwitterProject/myfirstimage.jpg')
-
-
+    x = 1
+    for image in images:
+    	image_path = "/home/joshuastern/Documents/601/API_Mini_Project/images/twitterimage"
+    	y = str(x)
+    	z = ".jpg"
+    	new_image_path = image_path + y + z
+    	wget.download(image, new_image_path)
+    	x = x+1
