@@ -36,7 +36,7 @@ def get_images(tweets):
 
     #build path and download with wget()
 	for image in images:
-		image_path = "/home/joshuastern/Documents/601/API-Mini-Project/images/twitterimage"
+		image_path = "/home/joshuastern/Documents/601/API-Mini-Project/twitterimage"
 		y = str(x)
 		z = ".jpg"
 		new_image_path = image_path + y + z
