@@ -1,6 +1,4 @@
-from tweepy import API
-from tweepy import Cursor
-from tweepy import OAuthHandler
+import tweepy
 import wget
 import passwords
 
@@ -9,17 +7,16 @@ def get_tweets(num_photos):
 
     #authenticate my twitter application with private keys
     #initialize tweepy
-    auth = OAuthHandler(passwords.CONSUMER_KEY, passwords.CONSUMER_SECRET)
+    auth = tweepy.OAuthHandler(passwords.CONSUMER_KEY, passwords.CONSUMER_SECRET)
     auth.set_access_token(passwords.ACCESS_TOKEN, passwords.ACCESS_TOKEN_SECRET)
-    my_twitter = API(auth)
+    my_twitter = tweepy.API(auth)
 
     #use Cursor for pagination
     #user_timeline returns "num_photos" amount of tweets
     tweets = []
-    for tweet in Cursor(my_twitter.user_timeline).items(num_photos):
+    for tweet in tweepy.Cursor(my_twitter.user_timeline).items(num_photos):
     	tweets.append(tweet)
 
-    print(tweets)
     return tweets
 
 def get_images(tweets):
@@ -32,7 +29,7 @@ def get_images(tweets):
 		if(len(media)>0):
 			images.append(media[0]['media_url'])
 	print(images)
-	x = 1
+	x = 1000
 
     #build path and download with wget()
 	for image in images:
@@ -46,6 +43,9 @@ def get_images(tweets):
 
 if __name__ == "__main__":
 
-    num_photos = 5
-    tweets = get_tweets(num_photos)
-    get_images(tweets)
+	try:
+    		num_photos = 10
+    		tweets = get_tweets(num_photos)
+    		get_images(tweets)
+	except:
+		print("Unable to get photos from twitter")
