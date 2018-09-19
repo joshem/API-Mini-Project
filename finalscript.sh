@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#change first arguments to number of tweets you want to check for photos
+#change the second argument to the directory that you are running this script in
 python get_twitter_photos.py 15 "/home/joshuastern/Documents/601/API-Mini-Project"
 
 if [ -f "twitterimage1000.jpg" ]; then
