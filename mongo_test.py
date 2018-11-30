@@ -1,6 +1,3 @@
-#sudo apt-get install mongodb
-#pip install pymongo
-
 import pymongo
 import datetime
 import operator
