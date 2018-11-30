@@ -63,6 +63,24 @@ search_keyword('person') - takes a keyword string as input, and returns a dictio
 
 These functions are located in mysql_test.py, and examples of how to use them are found in run_mysql_project3.py, where we call them to show you how they work.
 
+## To run program with MongoDB:
+```
+python run_mongo_project3.py
+```
+The program will ask you for your name and the number of images you want to retrieve from twitter. After this, the program will download the images, convert them into a video format with ffmpeg, and create a text file called 'image_descriptions.txt' containing descriptions of the photos using the Google Vision API. Data will be automatically stored in the mongodb database. 
+
+The database stores four pieces of information: username, time of date, number of images, and the descriptors. 
+
+To make use of the database, I have created mongo_test.py which contains a set of functions that allow for easy user acccess to statistics about past sessions. The 3 functions you can use are:
+
+user_image_count() - returns a dictionary that contains all of the users that have run the program, along with the number of images that each user has downloaded.
+
+most_popular() - returns a list of tuples, with each tuple containing a descriptor that was found by the Google Vidi
+
+search_keyword('person') - takes a keyword string as input, and returns a dictionary that contains all the users that found that keyword in their list of descriptors, as well as the times at which they found the keyword.
+
+These functions are located in mongo_test.py, and examples of how to use them are found in run_mongo_project3.py, where we call them to show you how they work.
+
 
 
 
