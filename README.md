@@ -23,7 +23,11 @@ I used the username 'jstern19' and the password 'Password'. You can change this,
 
 ### MongoDB installaion
 
+```
+#sudo apt-get install mongodb
 
+#pip install pymongo
+```
 
 To run:
 1. insert twitter api keys in passwords.py
