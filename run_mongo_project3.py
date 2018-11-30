@@ -7,6 +7,8 @@ import mongo_test
 
 x = input("Please enter username: ")
 y = input("How many photos do you want to search for? ")
+
+#call finalscript.sh which runs API-Mini-project1 by downloading twitter photos, creating the video, and calling the Google Vision API.
 cmd = "./finalscript.sh " + y
 os.system(cmd)
 
@@ -21,6 +23,8 @@ descriptors = descriptors[0:len(descriptors)-2]
 
 mongo_test.add_new_session(str(x), str(y), descriptors)
 
+
+#examples of how to use functions in mongo_test.py
 myresult = mongo_test.user_image_count()
 print(myresult)
 
