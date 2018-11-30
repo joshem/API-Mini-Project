@@ -1,8 +1,3 @@
-#sudo apt-get --purge remove mysql-server mysql-common mysql-client
-#sudo apt-get install mysql-server mysql-common mysql-client
-#pip install mysql-connector-python
-#GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';
-
 import mysql.connector
 import datetime
 import operator
