@@ -34,9 +34,15 @@ python mysql_test.py
 ### MongoDB installaion
 
 ```
-#sudo apt-get install mongodb
+sudo apt-get install mongodb
 
-#pip install pymongo
+pip install pymongo
+```
+
+The mongodb datatbase will take care of initializing itself. To clear it, run:
+
+```
+python mongo_test.py
 ```
 
 ## To run program with mysql:
