@@ -8,6 +8,7 @@ import mysql_test
 x = input("Please enter username: ")
 y = input("How many photos do you want to search for? ")
 
+#call finalscript.sh which runs API-Mini-project1 by downloading twitter photos, creating the video, and calling the Google Vision API.
 cmd = "./finalscript.sh " + y
 os.system(cmd)
 
@@ -22,6 +23,7 @@ descriptors = descriptors[0:len(descriptors)-2]
 
 mysql_test.add_new_session(str(x), str(y), descriptors)
 
+#examples of how to use database statistics functions found in mysql_test.py
 myresult = mysql_test.user_image_count()
 print(myresult)
 
