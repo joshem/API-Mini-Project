@@ -21,6 +21,16 @@ GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 
 I used the username 'jstern19' and the password 'Password'. You can change this, but doing so would require modifications to the code files. So it would be easier for you to just keep this username and password.
 
+To initialize the database, run:
+```
+python create_sql_db.py
+```
+
+If you want to clear the database for any reason, run:
+```
+python mysql_test.py
+```
+
 ### MongoDB installaion
 
 ```
@@ -29,8 +39,11 @@ I used the username 'jstern19' and the password 'Password'. You can change this,
 #pip install pymongo
 ```
 
-To run:
-1. insert twitter api keys in passwords.py
-2. insert google api keys in account_key.json
-3. open finalscript.sh and follow the instructions to change the arguments of the first python script call
-4. run finalscript.sh
+## To run program with mysql:
+```
+python run_mysql_project3.py
+```
+The program will ask you for your name and the number of images you want to retrieve from twitter. After this, the program will download the images, convert them into a video format with ffmpeg, and create a text file called 'image_descriptions.txt' containing descriptions of the photos using the Google Vision API. Data will be automatically stored in the mysql database. 
+
+To make use of the database, I have created mysql_test.py which contains a set of functions that allow for easy user acccess to statistics about past sessions. 
+
