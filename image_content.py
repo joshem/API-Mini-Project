@@ -28,14 +28,14 @@ def get_image_labels():
 			labels = response.label_annotations
 			working = 2
 			r = x-1000
-			print("description of photo ",r,": ")
+			#print("description of photo ",r,": ")
 			for label in labels:
 				print(label.description)
 
 		except:
 			if(working==0):
 				print("No image files found")
-			if(working==1)
+			if(working==1):
 				print("Error getting label from photo: check internet connection")
 			break
 
